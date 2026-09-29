@@ -5,7 +5,11 @@
 
 #pragma once
 
-#if defined(KITTENS_CDNA4)
+#if defined(KITTENS_RDNA4)
+#include "rdna4/includes.cuh"
+#elif defined(KITTENS_RDNA2)
+#include "rdna2/includes.cuh"
+#elif defined(KITTENS_CDNA4)
 #include "cdna4/includes.cuh"
 #elif defined(KITTENS_CDNA5)
 #include "cdna5/includes.cuh"
