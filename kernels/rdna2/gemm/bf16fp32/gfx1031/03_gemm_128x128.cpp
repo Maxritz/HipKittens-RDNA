@@ -23,7 +23,7 @@
  *   - `kittens::sync::arrive/wait`: split workgroup barrier (-1).
  *   - `kittens::sync::wait_ds`    : drain LDS reads before the matrix op and the handoff.
  *   - `kittens::load(rt,st,off)`  : shared -> register load (wide `ds_load_b128`).
- *   - `kittens::mma_ABt`          : 16x16x32 WMMA via the bf16 builtin.
+ *   - `kittens::mma_ABt`          : 16x16x32 FMA via v_pk_fmac_f32 packed chains (no WMMA on RDNA2).
  *   - `kittens::sched::compiler_fence` : keep the post-wait loads below the barrier.
  *   - `kittens::store(gl,rt,idx)` : direct column-major epilogue.
  */
